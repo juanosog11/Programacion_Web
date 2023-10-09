@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 2</title>
+
+    <script>
+        var global = 100;
+
+        function uno()
+        {
+            var local_uno = 1; //puede ser modificada o se puede volver a definir
+            alert("Global: " + global + "Local: " + local_uno);
+            dos();
+
+        }
+
+        function dos(){
+            let local_dos = 2; // let no deja re definir y se queda solo numerica 
+            console.log(local_dos);
+            alert("Global" + global + "Local: " + local_dos)
+            alert(local_dos + 2);
+            
+        }
+
+
+
+    </script>
+</head>
+<body onload= "uno();">
+    
+</body>
+</html>

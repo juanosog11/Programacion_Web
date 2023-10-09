@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+:root{
+    --alto:1024px
+}
+
+body{
+    
+    background: rgb(255, 255, 255);
+    position: absolute;
+    display: flex;
+    overflow-x: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    
+    color: white;
+}
+
+.contenedor{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.particula{
+    position: relative;
+    display: flex;
+
+}
+
+.particula span
+{
+    width: 50px;
+    height: 50px;
+    position: sticky;
+    background: #000000;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 5px #20202044,
+    0 0 5px #313131,
+    0 0 5px #303030;
+    animation: particulas_cubicas 15s linear infinite;
+    animation-duration: calc(125s/var(--i));
+}
+
+.particula span:nth-child(even){
+    background: #A22BAB;
+    box-shadow: 0 0 0 8px #A22BAB44,
+    0 0 7px #A22BAB,
+    0 0 5px #A22BAB;
+}
+
+@keyframes particulas_cubicas
+{
+    0%{transform: translateY(var(--alto));}
+
+    100%{transform: translateY(-5px);}
+
+}
+
+.fila{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px;
+    
+}
+
+
+
+.colum1{
+    width: 620px;
+    height: var(--alto);
+    background: #41156a98;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    gap: 15px;
+    
+}
+
+
+
+.colum2{
+    width: 620px;
+    height: var(--alto);
+    display: flex;
+    flex-direction: column;
+    /*background: #41156a98;*/
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    gap: 15px;
+    
+}
+
+.quiensoy{
+    width: 620px;
+    background: #41156a98;
+    align-items: center;
+    text-align: center;
+}
+
+.Habilidades{
+    width: 620px;
+    background: #41156a98;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+img
+{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+h1{
+    font-size: 22px;
+}
+
+.margen{
+    margin: 15px;
+}
+
+.margen_lado{
+    margin-left: 15px;
+}
+
+
+h2{
+    font-size: 17px;
+}
+
+

@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.player-card, .opponent-card {
+    width: 200px;
+    border: 2px solid #333;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #999;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bingo-ball {
+    width: 200px;
+}
+
+#current-ball {
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Agrega una clase para resaltar los números coincidentes */
+.matched {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.winner {
+    background-color: yellow;
+}

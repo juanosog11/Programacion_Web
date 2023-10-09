@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sopa de Letras</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Sopa de Letras</h1>
+    <table>
+        <tbody id="sopa-letras"></tbody>
+    </table>
+    <h2>Palabras a encontrar:</h2>
+    <ul id="palabras">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Sopa</li>
+        <li>Letras</li>
+    </ul>
+    <button onclick="resolverSopa()">Resolver</button>
+    <button onclick="restablecerSopa()">Restablecer</button>
+</body>
+<script>
+    
+    const palabras = ["HTML", "CSS", "JavaScript", "Sopa", "Letras"];
+        const sopaLetras = document.getElementById("sopa-letras");
+        let seleccionadas = [];
+
+        // Genera una tabla de letras aleatorias
+        for (let i = 0; i < 15; i++) {
+            const row = document.createElement("tr");
+            for (let j = 0; j < 15; j++) {
+                const cell = document.createElement("td");
+                cell.textContent = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Genera letras aleatorias de la A a la Z
+                cell.addEventListener("click", () => seleccionarLetra(cell));
+                row.appendChild(cell);
+            }
+            sopaLetras.appendChild(row);
+        }
+
+        // Agrega las palabras a la sopa de letras
+        palabras.forEach(palabra => {
+            insertarPalabraEnSopa(palabra);
+        });
+
+        // Función para seleccionar o deseleccionar una letra
+        function seleccionarLetra(cell) {
+            if (cell.classList.contains("tachada") || cell.classList.contains("encontrada")) {
+                return; // No se puede seleccionar o deseleccionar una letra si ya se tachó la palabra o se encontró
+            }
+
+            cell.classList.add("encontrada");
+            seleccionadas.push(cell);
+
+            const palabraSeleccionada = obtenerPalabraSeleccionada();
+            if (palabraSeleccionada) {
+                tacharPalabraEnLista(palabraSeleccionada);
+            }
+        }
+
+        // Función para obtener la palabra seleccionada en la tabla
+        function obtenerPalabraSeleccionada() {
+            const seleccion = seleccionadas.map(cell => cell.textContent).join("");
+            return palabras.find(palabra => palabra === seleccion);
+        }
+
+        // Función para tachar una palabra en la lista
+        function tacharPalabraEnLista(palabra) {
+            const listaPalabras = document.getElementById("palabras");
+            const palabrasLista = listaPalabras.getElementsByTagName("li");
+            for (let i = 0; i < palabrasLista.length; i++) {
+                if (palabrasLista[i].textContent === palabra) {
+                    palabrasLista[i].classList.add("tachada");
+                    break;
+                }
+            }
+        }
+
+        // Función para insertar una palabra en la sopa de letras
+        function insertarPalabraEnSopa(palabra) {
+            const palabraHorizontal = Math.random() < 0.5;
+            const palabraLongitud = palabra.length;
+            const maxPos = 10 - palabraLongitud;
+
+            let x, y;
+            if (palabraHorizontal) {
+                x = Math.floor(Math.random() * maxPos);
+                y = Math.floor(Math.random() * 10);
+            } else {
+                x = Math.floor(Math.random() * 10);
+                y = Math.floor(Math.random() * maxPos);
+            }
+
+            for (let i = 0; i < palabraLongitud; i++) {
+                const cell = sopaLetras.rows[x + (palabraHorizontal ? 0 : i)].cells[y + (palabraHorizontal ? i : 0)];
+                cell.textContent = palabra[i];
+            }
+        }
+
+        // Función para resolver la sopa de letras
+        function resolverSopa() {
+            palabras.forEach(palabra => {
+                const palabraEncontrada = Array.from(sopaLetras.getElementsByTagName("td")).filter(cell => cell.textContent === palabra);
+                palabraEncontrada.forEach(cell => {
+                    cell.classList.add("encontrada", "resaltada");
+                });
+                tacharPalabraEnLista(palabra);
+            });
+        }
+
+        // Función para restablecer la sopa de letras
+        function restablecerSopa() {
+            seleccionadas.forEach(cell => {
+                cell.classList.remove("encontrada", "resaltada");
+            });
+            const palabrasLista = document.getElementById("palabras").getElementsByTagName("li");
+            for (let i = 0; i < palabrasLista.length; i++) {
+                palabrasLista[i].classList.remove("tachada");
+            }
+        }
+</script>
+</html>

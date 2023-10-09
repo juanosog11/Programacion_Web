@@ -1,0 +1,16 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize; /* pone mayuscula a todas las palabras*/
+    text-decoration: none; /* quita las lines de abajo de los links*/
+    list-style: none; /* quita los puntos de las listas*/
+}
+
+body{
+    background-color: blue;
+    
+}

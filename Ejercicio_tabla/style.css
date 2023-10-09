@@ -1,0 +1,127 @@
+
+:root{
+    /* CSS HEX */
+--chocolate-cosmos: #561d25ff;
+--caramel: #ce8147ff;
+--flax: #ecdd7bff;
+--mindaro: #d3e298ff;
+--tea-green: #cde7beff;
+}
+
+body{
+    width: 1440px;
+    height: 1024px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--tea-green);
+    background: var(--caramel);
+    font-size: 12px;
+
+}
+
+
+.h1{
+    color: var(--chocolate-cosmos);
+    font-size: 48px;
+}
+
+table
+{
+    width: 350px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    background-color: var(--chocolate-cosmos);
+    
+}
+
+th{
+    
+    text-align: center;
+    padding: 10px;
+    margin-bottom:5px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    
+
+}
+
+
+td{
+    text-align: center;
+    padding: 10px;
+    background-color: var(--caramel);
+    border-color: black;
+}
+
+td:hover
+{
+    background-color: blue;
+    color: var(--tea-green);
+
+}
+
+.fila{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    padding: 15px;
+    gap: 15px;
+}
+
+.caja{
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+    text-align: center;
+    color: brown;
+    background-color: blue;
+    border-radius: 45px 25px 35px 15px;
+}
+
+.caja:hover{
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-color: yellow;
+    
+    border-radius: 35px 25px 45px 15px;
+}
+
+.caja:nth-child(odd)
+{
+    background-color: black;
+}
+
+
+.btn-1{
+    display: inline-block;
+    background-attachment:rgba(170, 177, 255, 0.3);
+    border: 1px solid #cd68fc;
+    margin: 35px 10px 0px 0px;
+    padding:  15px 20px;
+    color:black;
+    border-radius: 25px;
+    font-size: 15px;
+}
+.btn-1:hover{
+    background-color: #bc89f7;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+}
+

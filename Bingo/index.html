@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bingo</h1>
+    <div class="game-container">
+        <div class="player-card">
+            <h2>Tu Tarjeta</h2>
+            <table>
+                <!-- La tabla del jugador se llenará dinámicamente con filas y columnas -->
+            </table>
+        </div>
+        <div class="bingo-ball">
+            <h2>Bola Actual</h2>
+            <p id="current-ball">-</p>
+        </div>
+        <div class="opponent-card">
+            <h2>Tarjeta de la Máquina</h2>
+            <table>
+                <!-- La tabla de la máquina se llenará dinámicamente con filas y columnas -->
+            </table>
+        </div>
+    </div>
+    <button id="draw-button">Sacar Bola</button>
+    <button id="new-game-button">Nuevo Juego</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>

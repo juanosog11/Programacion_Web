@@ -1,0 +1,380 @@
+/*diseño de cuerpo*/
+
+head{
+    width: 1200px;
+    height: 300px;
+}
+img{
+    width: 250px;
+    height: 250px;
+    border-radius: 360px;
+    
+}
+
+p{
+    color: black;
+}
+
+.h1{
+    display: flex; 
+    align-items: center;
+    color: #fff;
+}
+
+.fotoestudiante{
+    width: 150px;
+    height: 150px;
+    border-radius: 360px;
+    
+}
+
+.encabezado{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.datospersonales{
+    width: 350px;
+    height: 350px;
+    background-color: #541e6993;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+.diseño{
+    justify-content: center;
+}
+
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #2528398e;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    position: relative;
+    flex-direction: row;
+}
+
+.h2{
+    color: #fff;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+/*diseño fondo */
+
+body{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 50vh;
+    background: #0c192c;
+
+}
+
+.container{
+    position: absolute;
+    display: flex;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+    
+}
+
+.bubbles span{
+    position: sticky;
+    width: 100px;
+    height: 120px;
+    background: #984fdc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #984fdc44,
+    0 0 50px #984fdc,
+    0 0 100px #984fdc;
+    animation: animate 10s linear infinite;
+    animation-duration: calc(125s/var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(1020px) scale(0);
+    }
+    100%{
+        transform: translateY(-40vh) scale(1);
+    }
+}
+
+
+
+
+
+/* diseño texto de enlaces*/
+
+/* estilo */
+
+/*.estilo_lindo
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    background-image: url("659862_black background with small purple spiral_ _xl-1024-v1-0.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: initial;
+
+}*/
+
+.fondo{
+    min-height: 100vh;
+    background: #252839;
+
+}
+
+
+
+ol{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+ol li{
+    position: relative;
+    list-style: none;
+}
+
+ol li a{
+    position: relative;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 1em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 05);
+}
+
+ol li a::before{
+    content: attr(data-text);
+    position: absolute;
+    color: var(--clr);
+    width: 0;
+    overflow: hidden;
+    transition: 1s;
+    border-right: 4px solid var(--clr);
+    -webkit-text-stroke: 1px var(--clr);
+}
+
+ol li a:hover::before{
+    width: 100%;
+    filter: drop-shadow(0 0 25px var(--clr));
+}
+
+/* diseño menu de redes*/
+
+.menu{
+    padding: 1rem;
+    background-color: #00000077;
+    position: relative;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px 20px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.212);
+}
+
+.link{
+    display: inline-flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 99em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform-origin: center left;
+    transition: width 0.2s ease-in;
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.link::before{
+    position: absolute;
+    z-index: -1;
+    content: "";
+    display: block;
+    border-radius: 99em;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    transform-origin: center right;
+    background-color: #5e5e5e;
+}
+
+.link:hover, .link:focus{
+    outline: 0;
+    width: 140px;
+}
+
+
+.link:hover::before,.link:hover .link-tittle
+{
+    transform: translateX(0%);
+}
+
+.link-icon{
+    color: var(--color);
+    font-size: 25px !important;
+    display: block;
+    flex-shrink: 0;
+    left: 18px;
+    position: absolute;
+}
+
+.link-tittle{
+    color: var(--color);
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+    display: block;
+    text-align: center;
+    text-indent: 20px;
+    width: 100%;
+}
+
+
+/* botones */
+
+
+button {
+    margin: 10px;
+    position: relative;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    transition: 0.2s;
+  }
+  
+  button:hover {
+    letter-spacing: 0.2rem;
+    padding: 1.1rem 3.1rem;
+    background: var(--clr);
+    color: var(--clr);
+    /* box-shadow: 0 0 35px var(--clr); */
+    animation: box 3s infinite;
+  }
+  
+  button::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #272822;
+  }
+  
+  button span {
+    position: relative;
+    z-index: 1;
+  }
+  button i {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+  
+  button i::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 80%;
+    top: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+  }
+  
+  button:hover i::before {
+    width: 15px;
+    left: 20%;
+    animation: move 3s infinite;
+  }
+  
+  button i::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 20%;
+    bottom: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+  }
+  
+  button:hover i::after {
+    width: 15px;
+    left: 80%;
+    animation: move 3s infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes box {
+    0% {
+      box-shadow: #27272c;
+    }
+    50% {
+      box-shadow: 0 0 25px var(--clr);
+    }
+    100% {
+      box-shadow: #27272c;
+    }
+}
+

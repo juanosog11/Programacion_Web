@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- vercion uno calculadora -->
+    <!-- <script>
+        let Total = 0;
+
+        function sumar()
+        {
+            if(Total == 0){
+                let numero = 0;
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                n2 = parseInt(prompt("Introduce un numero 1","0"));
+                Total = n1 + n2;
+            }
+            else{
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                Total += n1;
+            }
+            
+
+            
+            
+        }
+
+        function restar()
+        {
+            
+            if(Total == 0){
+                let numero = 0;
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                n2 = parseInt(prompt("Introduce un numero 1","0"));
+                Total = n1 + n2;
+            }
+            else{
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                Total -= n1;
+            }
+            
+        }
+
+        function multiplicar()
+        {
+            
+            if(Total == 0){
+                let numero = 0;
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                n2 = parseInt(prompt("Introduce un numero 1","0"));
+                Total = n1 + n2;
+            }
+            else{
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                Total *= n1;
+            }
+            
+        }
+
+        function dividir()
+        {
+            
+            if(Total == 0){
+                let numero = 0;
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                n2 = parseInt(prompt("Introduce un numero 1","0"));
+                Total = n1 + n2;
+            }
+            else{
+                n1 = parseInt(prompt("Introduce un numero 1","0"));
+                Total = Total / n1;
+            }
+            
+        }
+
+        function total(){
+            alert(Total);
+            Total = 0;
+        }
+
+
+    </script> -->
+
+    <script>
+        var Total = 0
+
+        function sumar(num1, num2) {
+            if(Total == 0){
+                Total += num1 + num2;
+            }
+            else{
+                Total += Total + num2
+            }
+            
+            let total = document.getElementById("total");
+            let n1 = document.getElementById("n1");
+            total = Total;
+            n1 = Total;
+        }
+
+        function restar(num1, num2) {
+
+            if(Total == 0){
+                Total += num1 - num2;
+            }
+            else{
+                Total += Total - num2
+            }
+            
+            let total = document.getElementById("total");
+            let n1 = document.getElementById("n1");
+            total = Total;
+            n1 = Total;
+        }
+
+        function multiplicar(num1, num2) {
+
+            if(Total == 0){
+                Total += num1 * num2;
+            }
+            else{
+                Total += Total * num2
+            }
+            
+            let total = document.getElementById("total");
+            let n1 = document.getElementById("n1");
+            total = Total;
+            n1 = Total;
+        }
+
+        function dividir(num1, num2) {
+            if(Total == 0){
+                Total += num1 / num2;
+            }
+            else{
+                Total += Total / num2
+            }
+            
+            let total = document.getElementById("total");
+            let n1 = document.getElementById("n1");
+            total = Total;
+            n1 = Total;
+        }
+
+        function calculadora(num1, num2, operacion) {
+
+            console.log(operacion);
+
+            switch (operacion) {
+                case 1:
+                    sumar(parseInt(num1),parseInt(num2));
+                    
+                    break;
+
+                case 2:
+
+                    restar(parseInt(num1),parseInt(num2));
+
+                    break;
+
+                case 3:
+
+                    multiplicar(parseInt(num1),parseInt(num2));
+
+                    break;
+
+                case 4:
+
+                    dividir(parseInt(num1),parseInt(num2));
+
+                    break;
+
+                case 5:
+
+                    alert(Total);
+                    Total = 0;
+
+                    break;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <!-- vercion uno calculadora -->
+    <!-- <section>
+        
+        <button onclick="sumar();"> Sumar </button>
+        <button onclick="restar();"> Restar </button>
+        <button onclick="multiplicar();"> Multiplicar </button>
+        <button onclick="dividir();"> Dividir </button>
+        <button onclick="total();"> Igual </button>
+    </section> -->
+
+    <!-- calculadora 2  -->
+
+    <section>
+        <form action="">
+            <label for=""> N1 </label>
+            <input type="number" id="n1" name="n1" value="0">
+            <label for=""> N2 </label>
+            <input type="number" name="n2" value="0">
+            <label for=""> total </label>
+            <input type="number" id="total" name="total" value="0">
+            <button onclick="calculadora(this.form.n1.value,this.form.n1.value,1);"> Sumar </button>
+            <button onclick="calculadora(this.form.n1.value,this.form.n1.value,2);"> Restar </button>
+            <button onclick="calculadora(this.form.n1.value,this.form.n1.value,3);"> Multiplicar </button>
+            <button onclick="calculadora(this.form.n1.value,this.form.n1.value,4);"> Dividir </button>
+            <button onclick="calculadora(this.form.n1.value,this.form.n1.value,5);"> Igual </button>
+        </form>
+    </section>
+</body>
+
+</html>
